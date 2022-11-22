@@ -1,0 +1,325 @@
+/******************** importing fonts, icons and css using api ********************/
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Fasthand&family=Headland+One&family=Julius+Sans+One&family=Montserrat&family=Nova+Oval&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@200;400&display=swap');
+
+/******************** defining-variables ********************/
+
+ :root {
+    /*for dark mode*/
+    --dark-color-a: #041C32;
+    --dark-color-b: #04293A;
+    --dark-color-bg: #064663;
+    --dark-color-d: #ECB365;
+    --dark-color-scheme: "https://colorhunt.co/palette/041c3204293a064663ecb365";
+    /*for light mode*/
+    --light-color-a: #F0E9D2;
+    --light-color-b: #E6DDC4;
+    --light-color-bg: #357b6e;
+    --light-color-d: #181D31;
+    --light-color-scheme: "https://colorhunt.co/palette/f0e9d2e6ddc4678983181d31";
+    --light-color-scheme-2: "https://colorhunt.co/palette/062c3005595be2d784f5f5f5";
+    /*fonts*/
+    --head-font: 'Headland One', serif;
+    --btn-font: 'Julius Sans One', sans-serif;
+    --txt-font: 'Montserrat', sans-serif;
+    --logo-font: 'Fasthand', cursive;
+    --txt-font-cursive: 'Pacifico', cursive;
+    --big-font1: 'Nova Oval', cursive;
+    --font1: 'Noto Serif Display', serif;
+    --bg-img: url('..//img/form-bg-img1.jpg');
+    --grad1: linear-gradient(to left, rgba(22, 141, 196, 0.6), rgba(15, 193, 216, 0.6));
+    --grad2: linear-gradient(to left, rgba(250, 118, 42, 0.7), rgba(87, 108, 202, 0.6));
+    --grad2: linear-gradient(to left, #ff1e1eb3, rgba(87, 108, 202, 0.6));
+    --grad-header: linear-gradient(141deg, rgba(252, 248, 232, 0.6) 0%, rgba(148, 180, 159, 0.6) 30%, rgba(236, 179, 144, 0.6) 50%, rgba(223, 120, 97, 0.6) 75%, rgba(236, 179, 101, 0.7)100%);
+}
+
+
+/******************** CSS for changing some user agent stylesheet (default CSS) ********************/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+/******************** CSS for main container ********************/
+
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+
+/******************** CSS for navbar ********************/
+
+#navbar {
+    background: var(--grad1);
+    height: 80px;
+    width: 100%;
+    padding-top: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.logo,
+.menubar {
+    display: inline-block;
+}
+
+.logo {
+    position: absolute;
+    left: 5%;
+    top: 20px;
+}
+
+.logo h2 {
+    color: #000000;
+    display: inline;
+    font-family: var(--txt-font-cursive);
+    font-size: 300%;
+}
+
+.menubar {
+    position: absolute;
+    right: 5%;
+    top: 40px;
+}
+
+.menu-option {
+    color: #0f0818;
+    font-family: var(--txt-font);
+    font-size: 25px;
+    transition: 1s;
+}
+
+.menu-option:hover {
+    color: rgba(255, 255, 255);
+    letter-spacing: 8px;
+}
+
+#menu li {
+    display: inline-block;
+    padding: 5px 20px 5px 20px;
+}
+
+
+/******************** Some common  CSS for  different sections ********************/
+
+#work,
+#about,
+#contact {
+    display: inline-block;
+    height: 860px;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    z-index: 95;
+}
+
+#about,
+#contact {
+    background: black;
+}
+
+#work {
+    background: white;
+}
+
+
+/******************** CSS for Overlay on hero area section ********************/
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    cursor: pointer;
+}
+
+#design h1,
+#develop h1,
+#deploy h1 {
+    margin: 100px 50px 50px 100px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-family: var(--btn-font);
+    font-size: 40px;
+    color: white;
+}
+
+#design hr,
+#develop hr,
+#deploy hr {
+    width: 80%;
+}
+
+#design p,
+#develop p,
+#deploy p {
+    text-indent: 4em;
+    margin: 50px 50px 50px 100px;
+    font-family: var(--txt-font);
+    font-size: 20px;
+    color: white;
+}
+
+
+/******************** CSS for About section ********************/
+
+.hero-area {
+    height: 500px;
+    width: 700px;
+    margin: 200px auto 0 auto;
+    z-index: 96;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.title-area {
+    text-align: center;
+}
+
+.title-area a {
+    display: inline-block;
+    border: 2px solid white;
+    text-transform: uppercase;
+    font-family: var(--font1);
+    font-size: 35px;
+    color: white;
+    padding: 25px;
+    margin: 25px;
+    letter-spacing: 2px;
+    transition: .5s;
+}
+
+.title-area a:hover {
+    font-size: 40px;
+}
+
+#d1:hover {
+    border: 15px dashed rgba(198, 233, 115);
+    color: rgba(198, 233, 115);
+}
+
+#d2:hover {
+    border: 15px dashed rgba(139, 174, 250);
+    color: rgba(139, 174, 250);
+}
+
+#d3:hover {
+    border: 15px dashed rgba(224, 134, 156);
+    color: rgba(224, 134, 156);
+}
+
+#title-area,
+#description-area {
+    display: inline-block;
+}
+
+#description-area {
+    width: 50%;
+    float: left;
+}
+
+#hero-title p {}
+
+#hero-subtitle {}
+
+#hero-description {}
+
+
+/******************** CSS for Works section ********************/
+
+#work {}
+
+#work h1 {
+    font-family: var(--big-font1);
+    font-size: 50px;
+    color: #062C30;
+    position: relative;
+    top: 160px;
+    right: 500px;
+    text-align: center;
+}
+
+
+/******************** CSS for Contact section ********************/
+
+#contact {}
+
+
+/******************** CSS for footer section ********************/
+
+#footer {
+    background-color: #064663;
+    height: 150px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+#footer ul,
+#copyright {
+    position: relative;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+#footer ul {
+    top: 30%;
+}
+
+#footer li {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+}
+
+.social-option img {
+    height: 1.5625em;
+    width: 1.5625em;
+    border: 0.1em solid black;
+    border-radius: 20% 20% 20% 20%;
+    padding: 0.2em;
+    background-color: #F5F5F5;
+}
+
+#copyright {
+    top: 50%;
+    font-family: var(--txt-font);
+    font-size: 1em;
+    color: #ffffff;
+}
